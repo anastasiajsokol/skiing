@@ -16,10 +16,27 @@
         <script type="importmap">
             {
                 "imports": {
-                "three": "/resources/three/three.module.js"
+                    "three": "/resources/three/three.module.js",
+                    "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
                 }
             }
         </script>
+
+        <style>
+            .divbackground {
+                /* position: absolute; */
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                height: 100%;
+                width: 100%;
+            }
+
+            .ontop {
+                z-index: 100;
+            }
+        </style>
     </head>
     <body>
         <main>
@@ -28,7 +45,74 @@
                 <div class="col-lg-6 mx-auto">
                   <p class="lead mb-4">First, some <i>&#x2728; meaningless corporate text &#x2728;</i>: Get ready to carve through powdery slopes, feel the crisp mountain air on your face, and immerse yourself in the thrill of a winter wonderland. We invite you to join us on an unforgettable skiing trip that promises not only breathtaking landscapes but also the exhilarating rush of gliding down pristine mountainsides. Picture yourself surrounded by snow-capped peaks, with the sun glistening off the white canvas beneath your skis. Gather your sense of adventure and prepare for an escapade where the mountains become your playground. Join us as we navigate the slopes, share laughter as we go, and savor the magic of a skiing trip that promises to be as epic as the mountains themselves!</p>
                 </div>
-            </div>            
+            </div>
+
+            <div class="container px-4 py-5" id="custom-cards">
+                <h2 class="pb-2 border-bottom">Logistics</h2>
+                
+                <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                  <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" style="aspect-ratio : 1/1;">
+                            <!-- background -->
+                            <canvas class="divbackground" id="skicanvas"></canvas>
+                            <script src="objects/skis.js" type="module"></script>
+                            
+                            <!-- overlay -->
+                            <h3 class="display-6 lh-1 fw-bold ontop">Skis</h3>
+                            <ul class="d-flex list-unstyled mt-auto ontop">
+                                <li class="me-auto">
+                                    <small>Rent from ORC</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+            
+                  <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-color: grey;">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                          <li class="me-auto">
+                            <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                          </li>
+                          <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                            <small>Pakistan</small>
+                          </li>
+                          <li class="d-flex align-items-center">
+                            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                            <small>4d</small>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-color: grey;">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                          <li class="me-auto">
+                            <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                          </li>
+                          <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                            <small>California</small>
+                          </li>
+                          <li class="d-flex align-items-center">
+                            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                            <small>5d</small>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </main>
 
         <!-- Bootstrap JavaScript -->
