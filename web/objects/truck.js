@@ -41,10 +41,12 @@ window.addEventListener("load", async _ => {
         const loader = new GLTFLoader();
 
         loader.load(
-            'objects/models/skis.glb',
+            'objects/models/truck.glb',
             gltf => {
                 let object = gltf.scene;
 
+                object.scale.x = object.scale.y = object.scale.z = 0.3;
+                
                 scene.add(object);
 
                 actions.push(time => {

@@ -32,7 +32,7 @@ window.addEventListener("load", async _ => {
     {
         // setup scene
         camera.position.z = 5;
-        const light = new THREE.AmbientLight(0xf0f0f0);
+        const light = new THREE.AmbientLight(0xf5f5f5);
         scene.add(light);
     }
 
